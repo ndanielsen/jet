@@ -4,6 +4,11 @@ An analysis module for JET on gender.
 NLTK to be implemented in future versions.
 
 
+Author:
+Nathan Danielsen
+nathan.danielsen@irex.org
+
+
 
 Tip of hat for inspiration to : 
 Ben Bengfort
