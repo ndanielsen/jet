@@ -71,14 +71,6 @@ class NLP(object):
 		stemmer = SnowballStemmer("english")
 		stemmed_tokens = [stemmer.stem(t) for t in self.tokens]
 
-		#print [stemmer.stem(t) for t in nltk.word_tokenize(temp_sent)]
-		#print [lemmatizer.lemmatize(t) for t in nltk.word_tokenize(temp_sent)]
-
-		# fdist = nltk.FreqDist(stemmed_tokens)
-
-		# for item in fdist.items()[:25]:
-		# 	print item
-
 		stemmed_tokens_no_stop = [stemmer.stem(t) for t in stemmed_tokens if t not in nltk.corpus.stopwords.words('english') ]
 
 		fdist2 = nltk.FreqDist(stemmed_tokens_no_stop)
