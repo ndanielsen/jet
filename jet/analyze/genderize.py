@@ -6,7 +6,7 @@ NLTK to be implemented in future versions.
 
 Author:
 Nathan Danielsen
-nathan.danielsen@irex.org
+nathan.j.danielsen@gmail.com
 
 
 
@@ -22,11 +22,24 @@ import time
 import collections
 
 class Gender(object):
+    """
+    A gender analysis module for Jet. Can take text files, clean and analyze. Main analysis function takes
+    a list of words, counts (male, female, neuter) words and returns tuple.
+
+    Visualization still tba in this module or another module.
+
+    Refatoring will happen at a later point - 2015-0301/
+
+
+    """
+
+
+
     def __init___(self):
         pass
 
     @staticmethod
-    def opentxt(filename):
+    def opentext(filename):
         """
         Helper function to open a text file and returns data in lists by line
         """
@@ -55,7 +68,7 @@ class Gender(object):
         Takes a list of words and counts them into a dictionary like object. The key is the word and the value is the count of words in the list.
         """
         count = collections.Counter(data) #uses built in Collections counter tool
-        return count
+        return dict(count)
 
 
     @staticmethod
@@ -89,10 +102,6 @@ class Gender(object):
                 'lady','mom','moms','mother','mothers','mrs','ms','niece','nieces',
                 'priestess','princess','queens','she','sister','sisters','waitress',
                 'widow','widows','wife','wives','woman'])
-        MALE = 'male'
-        FEMALE = 'female'
-        UNKNOWN = 'unknown'
-        BOTH = 'both'
 
         female = 0
         male = 0
@@ -105,7 +114,7 @@ class Gender(object):
                 #print word, "is a female word."
                 female += 1    
             else:
-            	continue # print word, "is not gendered"
+            	neuter += 1 # print word, "is not gendered"
         return male, female, neuter
 
     def main(self, data):
@@ -128,19 +137,27 @@ class Gender(object):
 
 if __name__ == "__main__":
 
-    test = Gender()
+    pass
+    #test = Gender()
     
-
-    #filename = wget.download("http://gutenberg.net.au/ebooks02/0200161.txt")
+    #type(test)
+    # #filename = wget.download("http://gutenberg.net.au/ebooks02/0200161.txt")
     
-    filename = "0200161.txt"
-    example = test.opentxt(filename)
+    #filename = "jet/analyze/nytimes.txt"
+    #example = test.opentxt(filename)
 
-    opened = test.cleaner(example)
+    #print example[0]
 
-    cleaned = test.listtodic(opened)
+    #print test.listtodic(['this', 'is', 'a', 'clean', 'this', 'list'])
 
-    print type(dict(cleaned))
+    # print type(dict(cleaned))
 
-    #print cleaned
-    #print test.genderize(opened)
+    # #print cleaned
+    # #print test.genderize(opened)
+
+
+    # example = test.opentxt(filename)
+
+    #print test.cleaner(["This is a clean list!"])
+
+    # cleaned = test.listtodic(opened)
