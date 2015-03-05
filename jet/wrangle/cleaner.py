@@ -20,7 +20,7 @@ class PageCleaner(object):
 	"""
 	def __init__(self, url):
 		self.url = urlopen(url).read() 
-
+		self.json = {}
 
 	def _extract(self):
 		"""
